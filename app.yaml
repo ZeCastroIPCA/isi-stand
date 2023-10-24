@@ -1,0 +1,24 @@
+runtime: nodejs12 # or nodejs10
+
+instance_class: F2
+
+env_variables:
+  MY_VAR: "frontend"
+  SECRET: happies_s3cr3t
+  TESTE: EnvVariable_GAE_TEST
+
+handlers:
+  - url: /static
+    static_dir: build/static
+  - url: /(.*\.(json|ico|js))$
+    static_files: build/\1
+    upload: build/.*\.(json|ico|js)$
+  - url: .*
+    static_files: build/index.html
+    upload: build/index.html
+  - url: /favicon.ico
+    static_files: public/favicon.ico
+    upload: public/favicon.ico
+  - url: /logo.png
+    static_files: public/logo.png
+    upload: public/logo.png

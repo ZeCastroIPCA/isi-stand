@@ -1,0 +1,9 @@
+.cars {
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: auto;
+}
