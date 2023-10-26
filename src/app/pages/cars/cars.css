@@ -46,3 +46,11 @@
     font-size: 1.2rem;
     margin-left: 10px;
 }
+
+.email {
+    width: 50%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

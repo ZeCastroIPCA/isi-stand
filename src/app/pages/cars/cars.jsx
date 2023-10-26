@@ -1,11 +1,13 @@
 import './cars.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { APIContext } from '../../contexts/context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 function Cars() {
   const context = useContext(APIContext);
+
+  const [email, setEmail] = useState('');
 
   const handleGetCarsInfo = () => {
     const carModel = document.querySelector('.make').value;
@@ -30,13 +32,14 @@ function Cars() {
         a.href = 'data:application/json,' + JSON.stringify(data);
         a.download = 'cars.json';
         a.click();
-        
+
         fetch(context.personApi, {
           method: 'GET',
         })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            setEmail(data.email);
             //download data as json file
             const a = document.createElement('a');
             a.href = 'data:application/json,' + JSON.stringify(data);
@@ -52,12 +55,21 @@ function Cars() {
     <div className='cars'>
       <div className='titles'>
         <h1>Cars</h1>
-        <p>Enter a car maker to get a JSON file with all models and information about the person that searches for them</p>
+        <p>
+          Enter a car maker to get a JSON file with all models and information about the person that searches for them
+        </p>
       </div>
       <div className='search'>
         <input className='make' type='text' placeholder='Enter a car make' />
-        <button onClick={handleGetCarsInfo}><FontAwesomeIcon icon={faDownload} size='lg' /></button>
+        <button onClick={handleGetCarsInfo}>
+          <FontAwesomeIcon icon={faDownload} size='lg' />
+        </button>
       </div>
+      {email && (
+        <div className='email'>
+          <p>Email: {email}</p>
+        </div>
+      )}
     </div>
   );
 }
