@@ -5,9 +5,9 @@ function About() {
     <div className='about'>
       <h1>About us</h1>
       <p>
-        The history of GEPCAR is a story of innovation and improvement. It is a story of people whose ideas and passions
-        have transformed our world. It began with light bulbs and extends to turbines and generators today. We celebrate
-        the 130-year journey of GEPCAR people and technologies that continue to build a world that works better.
+        GEPCAR is a tool that allows you to get information about cars. You can get information about the car model, the
+        year of manufacture, the price, the engine, the transmission, the fuel type, etc. You can also get information
+        about the person that searches for those cars.
       </p>
     </div>
   );
