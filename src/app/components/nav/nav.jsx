@@ -20,6 +20,12 @@ function Nav() {
           Search Cars
         </a>
         <a
+          href='/dashboard'
+          style={tab === '/dashboard' ? { color: 'var(--dark-red)' } : {}}
+        >
+          Dashboard
+        </a>
+        <a
           href='/about'
           style={tab === '/about' ? { color: 'var(--dark-red)' } : {}}
         >

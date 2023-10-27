@@ -1,0 +1,82 @@
+.dashboard {
+    width: 100%;
+    min-height: calc(100% - 60px);
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: auto;
+}
+
+.xml-inputs {
+    width: 70%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* input file */
+.xml-inputs input[type="file"] {
+    display: none;
+}
+
+.xml-inputs label {
+    width: 40%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.xml-inputs label:hover {
+    background-color: var(--gray);
+}
+
+.xml-content {
+    width: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin: 2rem 0;
+}
+
+.xml-models, .xml-person {
+    width: 40%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.xml-models h4, .xml-person h4 {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--gray);
+    margin-bottom: 1rem;
+}
+
+/* this is a code element */
+.xml-content-models, .xml-content-person {
+    min-width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 30px 10px;
+    border-radius: 5px;
+}
